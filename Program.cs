@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Text.RegularExpressions;
+using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -32,24 +34,44 @@ namespace AppDispositivos
                         case 1:
                             Console.WriteLine("---------------------------------------------");
                             Console.WriteLine("Has elegido la Terminal ");
-                            Console.WriteLine("Ponga la ip de su dispositivo: ");                     
-                            string ipTerminal= Console.ReadLine();                               
-                            Regex validateIPv4Regex = new Regex("^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-                           
-                            if (!validateIPv4Regex.IsMatch(ipTerminal))
+                            while (true)
                             {
-                                Console.WriteLine("La ip insertada no es correcta.");
+                                Console.WriteLine("Ponga la ip de su dispositivo: ");
+                                string ipTerminal = Console.ReadLine();
+                                Regex validateIPv4Regex = new Regex("^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+
+                                if (!validateIPv4Regex.IsMatch(ipTerminal))
+                                {
+                                    Console.WriteLine("La ip insertada no es correcta.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Ip correcta");
+                                    break;
+                                }
                             }
-                            else
+
+                            while (true)
                             {
-                                Console.WriteLine("Ip valida!");
+                             
+
+                                Console.WriteLine("Introduzca el puerto de comunicación: ");
+                                Regex regex = new Regex("^[0-9]+$");
+                          
+                                string puertoTerminal = Console.ReadLine();
+                                if (!regex.IsMatch(puertoTerminal)){
+                                    Console.WriteLine("El puerto no es correcto");
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("puerto correcto");
+                                    break;
+                                }
+
                             }
-                            Console.WriteLine("Introduzca el puerto de comunicación: ");
-                            string puertoTerminal = Console.ReadLine();
 
-
-
-                        bool salir2 = false;
+                            bool salir2 = false;
 
                             while (!salir2)
                             {
@@ -103,32 +125,45 @@ namespace AppDispositivos
 
                         case 2:
                             Console.WriteLine("---------------------------------------------");
-
-                            Console.WriteLine("Ponga la ip de su dispositivo: ");
-
-                            string ipControladora = Console.ReadLine();
-
-                            Regex validateIPv4Regex2 = new Regex("^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-                            bool correcto = false;
-                            while (!correcto)
+                            while (true)
                             {
-                                if (!validateIPv4Regex2.IsMatch(ipControladora))
-                                Console.WriteLine("La ip no es valida");
+                                Console.WriteLine("Ponga la ip de su dispositivo: ");
 
-                                
+                          
+                                string ipControladora = Console.ReadLine();
+
+                                Regex validateIPv4Regex2 = new Regex("^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+                                if (!validateIPv4Regex2.IsMatch(ipControladora))
+                                {
+                                    Console.WriteLine("La ip insertada no es correcta.");
+                                }
                                 else
                                 {
                                     Console.WriteLine("Ip correcta");
-                                    correcto = true;
-                                  
+                                    break;
                                 }
-                                
+
                             }
                             Console.WriteLine();
 
-                            Console.WriteLine("Introduzca el puerto de comunicación: ");
-                            
-                            string puertoControladora = Console.ReadLine();
+                            while (true)
+                            {
+                           
+                                Console.WriteLine("Introduzca el puerto de comunicación: ");
+
+                                string puertoControladora = Console.ReadLine();
+
+                                Regex regex = new Regex("^[0-9]+$");
+                                if (!regex.IsMatch(puertoControladora))
+                                {
+                                    Console.WriteLine("El puerto no es correcto");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("puerto correcto");
+                                    break;
+                                }
+                            }
                             bool salir3 = false;
 
                             while (!salir3)
@@ -180,7 +215,7 @@ namespace AppDispositivos
 
 
                             break;
-                       
+
                         case 3:
                             Console.WriteLine("Has elegido salir de la aplicación");
                             salir = true;
@@ -199,9 +234,4 @@ namespace AppDispositivos
         }
     }
 }
-
-
-
-
-     
 
