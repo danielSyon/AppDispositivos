@@ -1,0 +1,8 @@
+C:\Users\Desarrollo 4\Practica\AppDispositivos\bin\Debug\AppDispositivos.exe.config
+C:\Users\Desarrollo 4\Practica\AppDispositivos\bin\Debug\AppDispositivos.exe
+C:\Users\Desarrollo 4\Practica\AppDispositivos\bin\Debug\AppDispositivos.pdb
+C:\Users\Desarrollo 4\Practica\AppDispositivos\obj\Debug\AppDispositivos.csproj.AssemblyReference.cache
+C:\Users\Desarrollo 4\Practica\AppDispositivos\obj\Debug\AppDispositivos.csproj.SuggestedBindingRedirects.cache
+C:\Users\Desarrollo 4\Practica\AppDispositivos\obj\Debug\AppDispositivos.csproj.CoreCompileInputs.cache
+C:\Users\Desarrollo 4\Practica\AppDispositivos\obj\Debug\AppDispositivos.exe
+C:\Users\Desarrollo 4\Practica\AppDispositivos\obj\Debug\AppDispositivos.pdb
