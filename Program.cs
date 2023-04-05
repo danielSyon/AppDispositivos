@@ -106,21 +106,19 @@ namespace AppDispositivos
 
                             Console.WriteLine("Ponga la ip de su dispositivo: ");
 
-                            string ipControladora = Console.ReadLine();
-
-                            Regex validateIPv4Regex2 = new Regex("^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-                            bool correcto = false;
-                            while (!correcto)
+                            while (true)
                             {
-                                if (!validateIPv4Regex2.IsMatch(ipControladora))
-                                Console.WriteLine("La ip no es valida");
+                                string ipControladora = Console.ReadLine();
 
-                                
+                                Regex validateIPv4Regex2 = new Regex("^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+                                if (!validateIPv4Regex2.IsMatch(ipControladora))
+                                {
+                                    Console.WriteLine("Ip incorrecta");
+                                }
                                 else
                                 {
                                     Console.WriteLine("Ip correcta");
-                                    correcto = true;
-                                  
+                                    break;
                                 }
                                 
                             }
